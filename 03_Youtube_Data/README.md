@@ -1,0 +1,1 @@
+Replace VIDEO_ID in the url and comments_url variables with the actual ID of the video you want to scrape. This script will extract the title, description, tags, view count, likes, dislikes, and comments from the video. You can modify the script to extract other data as needed.

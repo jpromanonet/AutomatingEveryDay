@@ -1,0 +1,1 @@
+Note that you'll need to replace your_client_id and your_client_secret with your actual client ID and secret, respectively, to authenticate with the Spotify API. Additionally, you may want to modify the code to store the retrieved information in a database or file for future reference.

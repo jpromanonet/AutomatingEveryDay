@@ -29,3 +29,9 @@ def upload_video(video_file, video_title, video_description):
 
     # Print the response
     print("Video was uploaded successfully:", response)
+
+if __name__ == "__main__":
+    video_file = os.path.join("path", "to", "video", "file.mp4")
+    video_title = "My video title"
+    video_description = "My video description"
+    upload_video(video_file, video_title, video_description)

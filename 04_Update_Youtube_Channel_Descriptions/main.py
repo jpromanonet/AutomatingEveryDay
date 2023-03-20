@@ -18,3 +18,14 @@ def upload_video(video_file, video_title, video_description):
             "privacyStatus": "private"
         }
     }
+
+    # Upload the video file
+    request = youtube.videos().insert(
+        part="snippet,status",
+        body=video_metadata,
+        media_body=video_file
+    )
+    response = request.execute()
+
+    # Print the response
+    print("Video was uploaded successfully:", response)

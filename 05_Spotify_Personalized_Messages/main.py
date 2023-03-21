@@ -22,3 +22,9 @@ random_artist = random.choice(top_artists['items'])
 
 # Create a personalized message using the random track and artist
 message = f"Hey there! We noticed you've been listening to {random_track['name']} by {random_track['artists'][0]['name']} a lot lately. Did you know that {random_artist['name']} is a similar artist you might enjoy? Check them out and let us know what you think!"
+
+# Send the personalized message to the user
+user_id = sp.current_user()['id']
+sp.user_playlist_create(user_id, f"Personalized recommendation for {random_track['name']}", public=False)
+playlist_id = sp.current_user_playlists(limit=1)['items'][0]['id']
+sp.playlist_change_details(playlist_id, description=message)

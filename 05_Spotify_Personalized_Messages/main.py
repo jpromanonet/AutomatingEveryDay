@@ -17,4 +17,6 @@ top_artists = sp.current_user_top_artists(limit=10, time_range='medium_term')
 # Select a random track from the recently played tracks
 random_track = random.choice(recent_tracks['items'])
 
+# Select a random artist from the top artists
+random_artist = random.choice(top_artists['items'])
 

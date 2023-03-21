@@ -20,3 +20,5 @@ random_track = random.choice(recent_tracks['items'])
 # Select a random artist from the top artists
 random_artist = random.choice(top_artists['items'])
 
+# Create a personalized message using the random track and artist
+message = f"Hey there! We noticed you've been listening to {random_track['name']} by {random_track['artists'][0]['name']} a lot lately. Did you know that {random_artist['name']} is a similar artist you might enjoy? Check them out and let us know what you think!"

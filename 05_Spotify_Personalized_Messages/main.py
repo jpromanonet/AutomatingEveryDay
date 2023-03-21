@@ -8,6 +8,8 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="your_client_id",
                                                redirect_uri="your_redirect_uri",
                                                scope="user-read-recently-played user-top-read"))
 
+# Get the user's recently played tracks
+recent_tracks = sp.current_user_recently_played(limit=50)
 
 
 

@@ -28,3 +28,18 @@ def extract_data(search_results):
         data.append({"title": title, "description": description, "views": views})
     return data
 
+# Main function to automate the process of extracting data from YouTube video titles and descriptions
+def main():
+    # Search for videos based on a keyword or phrase
+    keyword = "trending topic"
+    search_results = search_videos(keyword)
+
+    # Extract data from the video titles and descriptions
+    data = extract_data(search_results)
+
+    # Example code to store the extracted data in a file
+    with open("youtube_data.json", "w") as file:
+        json.dump(data, file)
+
+if __name__ == "__main__":
+    main()

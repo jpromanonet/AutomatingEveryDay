@@ -20,3 +20,14 @@ def search_videos(q):
     }
     response = requests.get(search_endpoint, params=params)
     return response.json()
+
+# Function to create a new playlist
+def create_playlist(title):
+    data = {
+        "snippet": {
+            "title": title
+        }
+    }
+    response = requests.post(playlist_endpoint, params={"part": "snippet", "key": api_key}, json=data)
+    return response.json()
+

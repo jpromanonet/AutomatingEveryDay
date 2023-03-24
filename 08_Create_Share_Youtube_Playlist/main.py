@@ -31,3 +31,16 @@ def create_playlist(title):
     response = requests.post(playlist_endpoint, params={"part": "snippet", "key": api_key}, json=data)
     return response.json()
 
+# Function to add a video to a playlist
+def add_video_to_playlist(playlist_id, video_id):
+    data = {
+        "snippet": {
+            "playlistId": playlist_id,
+            "resourceId": {
+                "kind": "youtube#video",
+                "videoId": video_id
+            }
+        }
+    }
+    response = requests.post(playlist_endpoint + "/" + playlist_id + "/items", params={"part": "snippet", "key": api_key}, json=data)
+    return response.json()

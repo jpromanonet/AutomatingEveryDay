@@ -32,3 +32,14 @@ def add_tracks_to_playlist(playlist_id, track_uris):
     response = requests.post(add_tracks_endpoint.format(playlist_id=playlist_id), headers=header, json=data)
     return response.json()
 
+# Main function to automate the process of updating your personal Spotify playlist based on your workout or exercise routine
+def main():
+    # Example code to search for tracks based on your workout or exercise routine
+    workout_type = "running"
+    search_results = search_tracks("fast-paced energetic music for " + workout_type)
+
+    # Example code to add the tracks you're interested in to your playlist
+    playlist_id = "your_playlist_id_here"
+    track_uris = [track["uri"] for track in search_results["tracks"]["items"]]
+    add_tracks_to_playlist(playlist_id, track_uris)
+

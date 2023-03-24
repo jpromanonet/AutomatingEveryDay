@@ -7,5 +7,8 @@ access_token = "your_access_token_here"
 # Spotify Web API endpoint for searching for tracks
 search_endpoint = "https://api.spotify.com/v1/search"
 
+# Spotify Web API endpoint for adding tracks to a playlist
+add_tracks_endpoint = "https://api.spotify.com/v1/playlists/{playlist_id}/tracks"
+
 
 

@@ -10,3 +10,13 @@ search_endpoint = "https://www.googleapis.com/youtube/v3/search"
 # YouTube Data API endpoint for creating a new playlist
 playlist_endpoint = "https://www.googleapis.com/youtube/v3/playlists"
 
+# Function to search for videos based on a keyword or phrase
+def search_videos(q):
+    params = {
+        "q": q,
+        "part": "snippet",
+        "type": "video",
+        "key": api_key
+    }
+    response = requests.get(search_endpoint, params=params)
+    return response.json()

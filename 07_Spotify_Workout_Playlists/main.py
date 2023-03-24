@@ -43,3 +43,5 @@ def main():
     track_uris = [track["uri"] for track in search_results["tracks"]["items"]]
     add_tracks_to_playlist(playlist_id, track_uris)
 
+if __name__ == "__main__":
+    main()

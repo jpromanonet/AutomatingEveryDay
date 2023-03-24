@@ -24,4 +24,11 @@ def search_tracks(q):
     response = requests.get(search_endpoint, headers=header, params=params)
     return response.json()
 
+# Function to add tracks to a playlist
+def add_tracks_to_playlist(playlist_id, track_uris):
+    data = {
+        "uris": track_uris
+    }
+    response = requests.post(add_tracks_endpoint.format(playlist_id=playlist_id), headers=header, json=data)
+    return response.json()
 

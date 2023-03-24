@@ -15,5 +15,13 @@ header = {
     "Authorization": "Bearer " + access_token
 }
 
+# Function to search for tracks based on a keyword or phrase
+def search_tracks(q):
+    params = {
+        "q": q,
+        "type": "track"
+    }
+    response = requests.get(search_endpoint, headers=header, params=params)
+    return response.json()
 
 

@@ -32,3 +32,20 @@ def get_subscriber_info(channel_id):
     }
     response = requests.get(subscriber_endpoint, params=params)
     return response.json()
+
+# Main function to automate the process of extracting data from YouTube channels and subscriber lists
+def main():
+    # Example code to retrieve channel information based on a channel ID or username
+    channel_id_or_username = "channel_id_or_username_here"
+    channel_info = get_channel_info(channel_id_or_username)
+
+    # Example code to extract data from the channel information
+    channel_name = channel_info["items"][0]["snippet"]["title"]
+    channel_description = channel_info["items"][0]["snippet"]["description"]
+    channel_subscriber_count = channel_info["items"][0]["statistics"]["subscriberCount"]
+
+    # Example code to retrieve subscriber information for a channel
+    subscribers = get_subscriber_info(channel_id_or_username)
+
+    # Example code to extract data from the subscriber information
+    subscriber_usernames = [subscriber

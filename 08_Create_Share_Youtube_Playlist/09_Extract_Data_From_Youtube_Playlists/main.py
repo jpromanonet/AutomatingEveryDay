@@ -22,3 +22,13 @@ def get_channel_info(channel_id_or_username):
         params["forUsername"] = channel_id_or_username
     response = requests.get(channel_endpoint, params=params)
     return response.json()
+
+# Function to retrieve subscriber information for a channel
+def get_subscriber_info(channel_id):
+    params = {
+        "part": "snippet",
+        "channelId": channel_id,
+        "key": api_key
+    }
+    response = requests.get(subscriber_endpoint, params=params)
+    return response.json()

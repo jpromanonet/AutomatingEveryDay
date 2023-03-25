@@ -6,3 +6,7 @@ api_key = "your_api_key_here"
 
 # YouTube Data API endpoint for retrieving channel information
 channel_endpoint = "https://www.googleapis.com/youtube/v3/channels"
+
+# YouTube Data API endpoint for retrieving subscriber information
+subscriber_endpoint = "https://www.googleapis.com/youtube/v3/subscriptions"
+

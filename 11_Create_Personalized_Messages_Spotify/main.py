@@ -16,4 +16,8 @@ PLAYLIST_ID = "your_playlist_id"
 # Personalized message template
 message_template = "Hey {name}, thanks for listening to my playlist! I would really appreciate it if you could leave a review and let me know what you think. Thanks again!"
 
+# Function to authenticate Spotify API access token
+def get_token(username, client_id, client_secret, redirect_uri, scope):
+    token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri)
+    return token
 

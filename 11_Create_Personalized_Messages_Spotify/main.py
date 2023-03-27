@@ -33,3 +33,22 @@ def get_tracks(username, playlist_id, token):
         if len(results['items']) == 0:
             break
     return tracks
+
+# Function to send personalized messages
+def send_messages(tracks, message_template, token):
+    sp = spotipy.Spotify(auth=token)
+    for track in tracks:
+        # Get track listener details
+        listener = track['added_by']['id']
+        response = sp.user(listener)
+        name = response['display_name']
+        email = response['email']
+        # Personalize message
+        message = message_template.format(name=name)
+        # Send message
+        print("Sending message to {}...".format(email))
+        time.sleep(random.randint(1, 5))  # Add delay to avoid spamming
+        # Uncomment the following line to send email
+        # send_email(email, message)
+        # Uncomment the following line to send SMS
+        # send_sms(phone_number, message)

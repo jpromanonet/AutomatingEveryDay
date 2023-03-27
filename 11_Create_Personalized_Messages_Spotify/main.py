@@ -13,3 +13,7 @@ SCOPE = "user-read-private user-read-email user-library-read playlist-read-priva
 USERNAME = "your_spotify_username"
 PLAYLIST_ID = "your_playlist_id"
 
+# Personalized message template
+message_template = "Hey {name}, thanks for listening to my playlist! I would really appreciate it if you could leave a review and let me know what you think. Thanks again!"
+
+

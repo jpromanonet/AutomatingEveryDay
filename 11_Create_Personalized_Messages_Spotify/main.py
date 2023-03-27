@@ -52,3 +52,15 @@ def send_messages(tracks, message_template, token):
         # send_email(email, message)
         # Uncomment the following line to send SMS
         # send_sms(phone_number, message)
+
+# Main program
+if __name__ == '__main__':
+    # Authenticate Spotify API access token
+    token = get_token(USERNAME, CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, SCOPE)
+    if token:
+        # Get playlist tracks
+        tracks = get_tracks(USERNAME, PLAYLIST_ID, token)
+        # Send personalized messages
+        send_messages(tracks, message_template, token)
+    else:
+        print("Can't get token for", USERNAME)

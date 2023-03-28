@@ -51,3 +51,12 @@ def get_video_demographics(youtube, video_id):
     for item in results["items"]:
         print(f"Video demographics: {item['statistics']['demographics']}")
 
+# Main program
+if __name__ == "__main__":
+    credentials = authenticate()
+    youtube = build(API_NAME, API_VERSION, credentials=credentials)
+    try:
+        get_video_statistics(youtube, VIDEO_ID)
+        get_video_demographics(youtube, VIDEO_ID)
+    except HttpError as error:
+        print(f"An error occurred: {error}")

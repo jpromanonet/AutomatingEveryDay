@@ -42,3 +42,12 @@ def get_video_statistics(youtube, video_id):
         print(f"Video dislike count: {item['statistics']['dislikeCount']}")
         print(f"Video comment count: {item['statistics']['commentCount']}")
 
+# Retrieve video demographics
+def get_video_demographics(youtube, video_id):
+    results = youtube.videos().list(
+        part="statistics",
+        id=video_id
+    ).execute()
+    for item in results["items"]:
+        print(f"Video demographics: {item['statistics']['demographics']}")
+

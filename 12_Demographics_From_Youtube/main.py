@@ -30,3 +30,15 @@ def authenticate():
         credentials = flow.credentials
     return credentials
 
+# Retrieve video statistics
+def get_video_statistics(youtube, video_id):
+    results = youtube.videos().list(
+        part="statistics",
+        id=video_id
+    ).execute()
+    for item in results["items"]:
+        print(f"Video view count: {item['statistics']['viewCount']}")
+        print(f"Video like count: {item['statistics']['likeCount']}")
+        print(f"Video dislike count: {item['statistics']['dislikeCount']}")
+        print(f"Video comment count: {item['statistics']['commentCount']}")
+

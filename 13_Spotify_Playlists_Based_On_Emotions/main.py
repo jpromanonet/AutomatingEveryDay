@@ -13,3 +13,11 @@ mood_input = input("How are you feeling today? ")
 
 # Analyze the sentiment of the mood input
 sentiment = TextBlob(mood_input).sentiment.polarity
+
+# Set the mood category
+if sentiment > 0.5:
+    mood_category = "happy"
+elif sentiment > 0:
+    mood_category = "neutral"
+else:
+    mood_category = "sad"

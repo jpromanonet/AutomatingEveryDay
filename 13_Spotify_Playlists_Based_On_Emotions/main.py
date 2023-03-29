@@ -21,3 +21,9 @@ elif sentiment > 0:
     mood_category = "neutral"
 else:
     mood_category = "sad"
+
+# Spotify authentication
+scope = "playlist-modify-public"
+auth_manager = SpotifyOAuth(scope=scope)
+sp = spotipy.Spotify(auth_manager=auth_manager)
+

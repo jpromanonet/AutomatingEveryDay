@@ -31,3 +31,6 @@ sp = spotipy.Spotify(auth_manager=auth_manager)
 username = "your_spotify_username"
 playlist_id = "your_playlist_id"
 
+# Search for tracks based on the mood category
+track_results = sp.search(q=f"{mood_category}", type="track", limit=20)
+

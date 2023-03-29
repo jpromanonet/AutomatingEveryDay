@@ -10,3 +10,6 @@ os.environ["SPOTIPY_REDIRECT_URI"] = "your_spotify_redirect_uri"
 
 # Get user input for mood
 mood_input = input("How are you feeling today? ")
+
+# Analyze the sentiment of the mood input
+sentiment = TextBlob(mood_input).sentiment.polarity

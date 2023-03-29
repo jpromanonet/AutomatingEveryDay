@@ -8,3 +8,5 @@ os.environ["SPOTIPY_CLIENT_ID"] = "your_spotify_client_id"
 os.environ["SPOTIPY_CLIENT_SECRET"] = "your_spotify_client_secret"
 os.environ["SPOTIPY_REDIRECT_URI"] = "your_spotify_redirect_uri"
 
+# Get user input for mood
+mood_input = input("How are you feeling today? ")

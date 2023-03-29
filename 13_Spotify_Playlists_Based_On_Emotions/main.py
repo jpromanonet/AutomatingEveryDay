@@ -34,3 +34,5 @@ playlist_id = "your_playlist_id"
 # Search for tracks based on the mood category
 track_results = sp.search(q=f"{mood_category}", type="track", limit=20)
 
+# Extract track IDs
+track_ids = [track["id"] for track in track_results["tracks"]["items"]]

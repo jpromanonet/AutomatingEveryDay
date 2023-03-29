@@ -27,3 +27,7 @@ scope = "playlist-modify-public"
 auth_manager = SpotifyOAuth(scope=scope)
 sp = spotipy.Spotify(auth_manager=auth_manager)
 
+# Replace with your own Spotify username and playlist ID
+username = "your_spotify_username"
+playlist_id = "your_playlist_id"
+

@@ -40,3 +40,7 @@ track_ids = [track["id"] for track in track_results["tracks"]["items"]]
 # Clear the existing playlist
 sp.playlist_replace_items(playlist_id, [])
 
+# Add the new tracks to the playlist
+sp.playlist_add_items(playlist_id, track_ids)
+
+print(f"Your playlist has been updated with {mood_category} songs!")

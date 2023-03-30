@@ -20,3 +20,21 @@ def search_youtube(query, max_results=25):
 
     return videos
 
+# Create a playlist
+def create_playlist(title, description, privacy_status="public"):
+    body = {
+        "snippet": {
+            "title": title,
+            "description": description,
+        },
+        "status": {
+            "privacyStatus": privacy_status,
+        },
+    }
+
+    response = youtube.playlists().insert(
+        part="snippet,status",
+        body=body,
+    ).execute()
+
+    return response["id"]

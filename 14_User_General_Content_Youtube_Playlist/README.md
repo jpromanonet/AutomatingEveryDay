@@ -1,0 +1,1 @@
+Replace "YOUR_SEARCH_QUERY", "YOUR_PLAYLIST_TITLE", and "YOUR_PLAYLIST_DESCRIPTION" with your desired values. This script will create a playlist, add the videos based on the search query, and print the URL for sharing the playlist.

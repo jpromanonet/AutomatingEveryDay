@@ -3,3 +3,20 @@ from googleapiclient.discovery import build
 
 api_key = "YOUR_API_KEY"
 youtube = build("youtube", "v3", developerKey=api_key)
+
+# Search for user content and channels
+def search_youtube(query, max_results=25):
+    search_response = youtube.search().list(
+        q=query,
+        part="id,snippet",
+        maxResults=max_results,
+        type="video",
+    ).execute()
+
+    videos = []
+
+    for search_result in search_response.get("items", []):
+        videos.append(search_result)
+
+    return videos
+

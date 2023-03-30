@@ -76,3 +76,12 @@ def create_and_share_playlist(query, title, description, max_results=25):
 
     # Share the playlist
     share_playlist(playlist_id)
+
+# Execute the params in the script
+
+query = "YOUR_SEARCH_QUERY"
+title = "YOUR_PLAYLIST_TITLE"
+description = "YOUR_PLAYLIST_DESCRIPTION"
+max_results = 25
+
+create_and_share_playlist(query, title, description, max_results)

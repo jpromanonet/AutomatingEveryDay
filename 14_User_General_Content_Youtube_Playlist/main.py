@@ -38,3 +38,22 @@ def create_playlist(title, description, privacy_status="public"):
     ).execute()
 
     return response["id"]
+
+# Add videos to a playlist
+def add_video_to_playlist(playlist_id, video_id):
+    body = {
+        "snippet": {
+            "playlistId": playlist_id,
+            "resourceId": {
+                "kind": "youtube#video",
+                "videoId": video_id,
+            },
+        },
+    }
+
+    response = youtube.playlistItems().insert(
+        part="snippet",
+        body=body,
+    ).execute()
+
+    return response

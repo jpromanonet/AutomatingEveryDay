@@ -57,3 +57,9 @@ def add_video_to_playlist(playlist_id, video_id):
     ).execute()
 
     return response
+
+# Sharing the playlist using this URL
+def share_playlist(playlist_id):
+    playlist_url = f"https://www.youtube.com/playlist?list={playlist_id}"
+    print(f"Share this URL: {playlist_url}")
+

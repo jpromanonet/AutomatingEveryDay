@@ -63,3 +63,16 @@ def share_playlist(playlist_id):
     playlist_url = f"https://www.youtube.com/playlist?list={playlist_id}"
     print(f"Share this URL: {playlist_url}")
 
+def create_and_share_playlist(query, title, description, max_results=25):
+    # Search for videos
+    videos = search_youtube(query, max_results)
+
+    # Create a playlist
+    playlist_id = create_playlist(title, description)
+
+    # Add videos to the playlist
+    for video in videos:
+        add_video_to_playlist(playlist_id, video["id"]["videoId"])
+
+    # Share the playlist
+    share_playlist(playlist_id)

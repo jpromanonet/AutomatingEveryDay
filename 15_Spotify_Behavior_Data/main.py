@@ -25,3 +25,10 @@ def get_tracks_from_playlists(playlists):
         tracks = sp.playlist_tracks(playlist['id'])
         all_tracks.extend(tracks['items'])
     return all_tracks
+
+time_range = 'medium_term'  # Options: 'short_term', 'medium_term', 'long_term'
+limit = 10
+
+top_tracks, top_artists = get_user_top_tracks_and_artists(time_range, limit)
+playlists = get_playlists_based_on_artists(top_artists, limit)
+tracks = get_tracks_from_playlists(playlists)

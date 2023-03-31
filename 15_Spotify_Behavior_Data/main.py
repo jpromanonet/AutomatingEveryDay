@@ -11,3 +11,10 @@ def get_user_top_tracks_and_artists(time_range, limit):
     top_tracks = sp.current_user_top_tracks(time_range=time_range, limit=limit)
     top_artists = sp.current_user_top_artists(time_range=time_range, limit=limit)
     return top_tracks, top_artists
+
+def get_playlists_based_on_artists(top_artists, limit):
+    playlists = []
+    for artist in top_artists['items']:
+        search_results = sp.search(q=artist['name'], type='playlist', limit=limit)
+        playlists.extend(search_results['playlists']['items'])
+    return playlists

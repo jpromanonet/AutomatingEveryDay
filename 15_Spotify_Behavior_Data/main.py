@@ -18,3 +18,10 @@ def get_playlists_based_on_artists(top_artists, limit):
         search_results = sp.search(q=artist['name'], type='playlist', limit=limit)
         playlists.extend(search_results['playlists']['items'])
     return playlists
+
+def get_tracks_from_playlists(playlists):
+    all_tracks = []
+    for playlist in playlists:
+        tracks = sp.playlist_tracks(playlist['id'])
+        all_tracks.extend(tracks['items'])
+    return all_tracks

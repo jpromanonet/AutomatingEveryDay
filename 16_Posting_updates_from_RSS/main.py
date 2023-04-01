@@ -17,3 +17,8 @@ def setup_youtube_api():
     credentials = flow.run_console()
     youtube = googleapiclient.discovery.build(api_service_name, api_version, credentials=credentials)
     return youtube
+
+def get_latest_blog_post(rss_feed_url):
+    feed = feedparser.parse(rss_feed_url)
+    latest_post = feed.entries[0]
+    return latest_post

@@ -22,3 +22,9 @@ def get_latest_blog_post(rss_feed_url):
     feed = feedparser.parse(rss_feed_url)
     latest_post = feed.entries[0]
     return latest_post
+
+def create_video_description(blog_post):
+    title = blog_post.title
+    link = blog_post.link
+    description = f"Check out our latest blog post: {title}\nRead the full article: {link}"
+    return description

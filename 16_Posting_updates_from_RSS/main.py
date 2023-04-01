@@ -28,3 +28,26 @@ def create_video_description(blog_post):
     link = blog_post.link
     description = f"Check out our latest blog post: {title}\nRead the full article: {link}"
     return description
+
+def update_youtube_channel(youtube, video_id, video_description):
+    request = youtube.videos().update(
+        part="snippet",
+        body={
+            "id": video_id,
+            "snippet": {
+                "title": "New Blog Post Update",
+                "description": video_description,
+                "categoryId": "22"  # "People & Blogs" category
+            }
+        }
+    )
+    response = request.execute()
+    return response
+
+rss_feed_url = "https://your-blog-domain.com/rss-feed-url"  # Replace with your blog's RSS feed URL
+video_id = "YOUR_VIDEO_ID"  # Replace with the ID of the video you want to update
+
+youtube = setup_youtube_api()
+latest_blog_post = get_latest_blog_post(rss_feed_url)
+video_description = create_video_description(latest_blog_post)
+update_youtube_channel(youtube, video_id, video_description)
